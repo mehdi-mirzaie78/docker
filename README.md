@@ -101,7 +101,19 @@ docker run --name basic-postgres --rm -e POSTGRES_USER=postgres -e POSTGRES_PASS
  - connecting these to once without .env file
  - the other time using .env file for both container and django project (because it is a sensetive information)
  
-
+#### Django Settings for postgres database
+```python
+DATABASES = {
+    'default': {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "posgres",
+        "USER": "postgres",
+        "PASSWORD": "postgres",
+        "HOST": "db",
+        "PORT": "5432"
+    }
+}
+```
 
 
 #### Dockerfile
