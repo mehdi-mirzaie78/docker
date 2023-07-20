@@ -1,3 +1,4 @@
+
 # Docker
 
 ### SECTION 1 (20 minutes)
@@ -13,7 +14,26 @@
  - containers
  - work around some commands and features
  - Dockerfile -> create image of a simple django project
+ - .dockerignore
  - etc(Push to registry, load, save) *
+
+
+#### Dockerfile
+```Dockerfile
+FROM python:3.11
+LABEL Maintainer="maktab@gmail.com"
+LABEL Owner="Maktab93"
+LABEL version="v1.1"
+WORKDIR /app
+COPY requirements.txt .
+RUN pip install -U pip
+RUN pip install -r requirements.txt
+COPY . .
+EXPOSE 8000
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
+```
+<br>
+
 
 ---------------------------------------------------
 
@@ -75,12 +95,12 @@ docker run --name basic-postgres --rm -e POSTGRES_USER=postgres -e POSTGRES_PASS
 
 ---------------------------------------------------
 
-### SECTION 4 - docker-compose network volume (1 hour)
+### SECTION 4 - docker-compose & network & volume (1 hour)
  - Simple Django Project with docker
  - postgres container + app container
  - connecting these to once without .env file
  - the other time using .env file for both container and django project (because it is a sensetive information)
- - .dockerignore
+ 
 
 
 
