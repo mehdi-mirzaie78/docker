@@ -76,7 +76,7 @@ docker run --name db -e POSTGRES_PASSWORD=postgres -e POSTGRES_USER=postgres -d 
 
 #### With docker volume OR With connecting local place to container
 ```bash
--v volume_name
+-v volume_name:container_path
 
 -v /tmp:/var/lib/postgresql/data
 ```
